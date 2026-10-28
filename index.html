@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Projets de Murielle Houngan, ingénieure géomaticienne spécialisée en SIG, télédétection, modélisation 3D, IA et exploration des territoires.">
+<title>Murielle H</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Murielle HOUNGAN</div>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <nav id="mainNav">
+    <ul>
+      <li><a data-target="home" class="active">Accueil</a></li>
+      <li><a data-target="about">À propos</a></li>
+      <li><a data-target="portfolio">Projets</a></li>
+      <li><a data-target="resources">Ressources</a></li>
+      <li><a href="#voyages" data-target="voyages">Cartothèque</a></li>
+      <li><a data-target="contact">Contact</a></li>
+      <li>
+        <button id="theme-toggle" title="Basculer le thème">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section class="view active" id="home">
+  <div class="hero">
+    <div class="hero-scene">
+      <canvas id="hero3d-canvas" aria-hidden="true"></canvas>
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#141a15"/>
+            <stop offset="55%" stop-color="#0d110d"/>
+            <stop offset="100%" stop-color="#070907"/>
+          </linearGradient>
+          <linearGradient id="canopyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1b2a1c"/>
+            <stop offset="100%" stop-color="#0a0f0a"/>
+          </linearGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+        <!-- distant tree ridge -->
+        <path d="M0,560 C120,520 180,545 260,510 C340,480 400,530 480,500 C560,470 620,520 700,495 C780,465 860,510 940,485 C1020,455 1100,505 1180,480 C1260,450 1340,495 1420,470 C1500,445 1560,480 1600,465 L1600,900 L0,900 Z"
+              fill="url(#canopyGrad)" opacity="0.55"/>
+
+          <line x1="0" y1="300" x2="1600" y2="300"/>
+          <line x1="0" y1="380" x2="1600" y2="380"/>
+          <line x1="400" y1="220" x2="400" y2="620"/>
+          <line x1="1200" y1="220" x2="1200" y2="620"/>
+        
+        <g fill="#8fae91" opacity="0.75">
+          <circle cx="400" cy="300" r="3"/>
+          <circle cx="1200" cy="380" r="3"/>
+          <circle cx="700" cy="340" r="2.5"/>
+          <circle cx="1080" cy="300" r="2.5"/>
+        </g>
+        <g fill="none" stroke="#8fae91" stroke-width="1" opacity="0.55">
+          <circle cx="400" cy="300" r="14"/>
+          <circle cx="1200" cy="380" r="14"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-coordinate-layer" aria-hidden="true"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <h1>Murielle H.</h1>
+      <div class="role">Ingénieure Géomaticienne | Télédétection, SIG & IA</div>
+      <div class="role-list" aria-label="Domaines de compétence">
+            <div class="role" data-icon="">Topographie</div>
+            <div class="role" data-icon="">SIG</div>
+            <div class="role" data-icon="">Cartographie</div>
+            <div class="role" data-icon="">Télédétection</div>
+            <div class="role" data-icon="">Modélisation 3D</div>
+            <div class="role" data-icon="">IA</div>
+      </div>
+      <p class="tagline">Valoriser la donnée géospatiale pour comprendre et préserver nos écosystèmes.</p>
+    </div>
+    <button class="scroll-hint" type="button" aria-label="Faire défiler vers la suite">
+      SCROLL
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
+  <section class="about-work" id="about-work" aria-labelledby="about-work-title">
+    <div class="about-work-inner">
+      <h2 id="about-work-title">À propos de moi</h2>
+      <p>Ingénieure géomaticienne spécialisée en télédétection et environnement, je transforme la donnée géospatiale en outils opérationnels pour comprendre et accompagner les dynamiques des territoires.</p>
+      <a class="about-work-link" data-target="about">En savoir plus <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  <section class="projects-showcase" aria-labelledby="projects-showcase-title">
+    <div class="projects-showcase-header">
+      <div>
+        <h2 id="projects-showcase-title">Projets &amp; réalisations</h2>
+      </div>
+      <p>Des missions et projets d'une grande diversité, tous animés par une même ambition : <b>faire de la donnée géospatiale un outil d'aide à la décision accessible et performant.</b></p>
+    </div>
+    <div class="project-filters" aria-label="Filtrer les projets">
+      <button class="active" type="button" data-filter="all">Tous</button>
+      <button type="button" data-filter="sig">SIG</button>
+      <button type="button" data-filter="mapping">Cartographie</button>
+      <button type="button" data-filter="remote_sensing">Télédétection</button>
+      <button type="button" data-filter="photogrammetry">Photogrammétrie &amp; Modélisation 3D</button>
+      <button type="button" data-filter="machine_learning">Machine Learning</button>
+      <button type="button" data-filter="deep_learning">Deep Learning</button>
+      <button type="button" data-filter="vision">Computer vision</button>
+      <button type="button" data-filter="dev">Dev</button>
+    </div>
+    <div class="project-showcase-grid">
+      <article class="showcase-card proj-card" data-category="dev mapping">
+        <div class="bg bg-project-cimetieres" role="img" aria-label="Interface cartographique de gestion des cimetières"></div>
+        <div class="overlay"><div class="tag project-meta-dark">ELYON CONSULTING · 2026</div><h3>Système intégré de gestion et d’inventaire des cimetières</h3>
+        <p>Un système intégré pour moderniser la gestion des cimetières : collecte mobile, gestion municipale et carte interactive réunies dans un même outil.</p>
+        <div class="project-tags"><span>PostgreSQL/PostGIS</span><span>QGIS</span><span>OpenStreetMap</span><span>React</span><span>Tailwind CSS</span><span>Dart</span><span>Flutter</span><span>Supabase</span><span>SQL</span><span>Hive</span></div>
+        <a class="project-more-link" data-target="portfolio" data-project="proj-cimetieres">En savoir plus <span aria-hidden="true">→</span></a></div>
+      </article>
+
+      <article class="showcase-card proj-card" data-category="remote_sensing machine_learning deep_learning vision">
+        <div class="bg bg-project-delineation" role="img" aria-label="Résultat de délinéation individuelle de couronnes d’arbres"></div>
+        <div class="overlay"><div class="tag">CNRS · UMR6554 LETG · MONI-TREE · 2026</div><h3>Délinéation individuelle des couronnes d’arbres par Deep Learning</h3>
+        <p>Entraînement de modèles de segmentation (U-Net) pour délimiter automatiquement les couronnes d'arbres à partir de photographies aériennes RGBi, et calcul d'indices de végétation à l'échelle de l'arbre.</p>
+        <div class="project-tags"><span>TreeCrownDelineation</span><span>Python</span><span>PyTorch</span><span>GDAL</span><span>rasterio</span><span>scipy</span><span>scikit-image</span><span>Raster</span><span>Vecteur</span><span>NDVI</span><span>Végétation</span></div>
+        <a class="project-more-link" href="https://oseren.univ-rennes.fr/actualites/anr-moni-tree" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+      </article>
+
+      <article class="showcase-card proj-card" data-category="photogrammetry vision machine_learning deep_learning">
+        <div class="bg bg-project-modelisation3d" role="img" aria-label="Modèle tridimensionnel d’un arbre"></div>
+        <div class="overlay"><div class="tag">CNRS · UMR6554 LETG · NUMeNAT · 2024–2026</div><h3>Modélisation 3D de la végétation arborée</h3>
+        <p>Conception et optimisation de pipelines de reconstruction 3D par SFM-MVS, NeRF et 3D Gaussian Splatting, alimentés par des données smartphone (photos et vidéos, capteurs GPS et IMU), estimation automatique des paramètres morphologiques et évaluation de la précision des modèles par comparaison avec des relevés LiDAR.</p>
+        <div class="project-tags"><span>SfM-MVS</span><span>NeRF</span><span>3DGS</span><span>COLMAP</span><span>Agisoft Metashape</span><span>CloudCompare</span><span>Python</span><span>Végétation</span><span>Arbre</span></div>
+        <a class="project-more-link" href="https://www.vegepolys-valley.eu/les-projets/les-projets-des-membres/14776-numenat.html" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+      </article>
+
+      </div>
+    <a class="projects-more-link" data-target="portfolio">Voir plus de projets <span aria-hidden="true">→</span></a>
+  </section>
+    <section class="home-travel-intro" aria-labelledby="home-travel-title">
+      <h2 id="home-travel-title">Cartothèque</h2>
+      <p>Mieux que mille mots.</p>
+      <div class="home-travel-gallery" aria-label="Cartes en cours de préparation">
+        <div class="home-travel-placeholder">En cours</div>
+        <div class="home-travel-placeholder">En cours</div>
+        <div class="home-travel-placeholder">En cours</div>
+      </div>
+      <a class="projects-more-link home-travel-link" href="#voyages" data-target="voyages" aria-label="Découvrir la cartothèque">voir plus de cartes <span aria-hidden="true">→</span></a>
+    </section>
+</section>
+
+
+<!-- ABOUT ME -->
+<section class="view" id="about">
+  <div class="page-head">
+    <h2>À propos de moi</h2>
+    <p>Un profil hybride entre ingénierie géospatiale, recherche appliquée et accompagnement opérationnel des territoires.</p>
+  </div>
+  <div class="about-body wrap">
+    <div class="about-visual">
+      <img src="assets/profil3.png" alt="Portrait de Murielle Houngan" loading="lazy">
+    </div>
+    <div>
+      
+      <div class="bio">
+        <p>Ingénieure géomaticienne spécialisée en télédétection et environnement, je transforme la donnée géospatiale en solutions d’analyse fiables et opérationnelles pour le suivi et la compréhension des dynamiques territoriales.</p>
+        <p>J’interviens sur l’ensemble du cycle de production : acquisition, structuration, analyse et valorisation des données. Ma maîtrise des outils et langages dédiés me permet de concevoir des traitements avancés et d’automatiser les workflows de manière fiable, pour une mise en œuvre efficace et à grande échelle.</p>
+        <p>Situés à l’intersection de la télédétection, de la photogrammétrie 3D et de l’IA, mes travaux récents s’articulent autour de la modélisation de la végétation arborée, sa caractérisation et le suivi de son état sanitaire. Je développe des approches automatisées de détection, segmentation, et d'extraction d'indicateurs morphologiques à l'échelle de l'arbre individuel.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="competencies">
+    <div class="competencies-intro">
+      <h2>Compétences</h2>
+      <p>Une expertise de bout en bout : acquisition, analyse et diffusion de vos données, ainsi que formation de vos équipes aux outils SIG.</p>
+    </div>
+    <div class="competencies-grid">
+      <div class="competency-card">
+        <h3>Télédétection &amp; imagerie</h3>
+        <p>Traitement et analyse d’images.</p>
+        <div class="competency-tags"><span>ENVI</span><span>SNAP</span><span>OTB</span><span>GDAL</span><span>Rasterio</span><span>TerrSet</span><span>GeoPandas</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>SIG &amp; bases spatiales</h3>
+        <p>Analyse et gestion des données géographiques.</p>
+        <div class="competency-tags"><span>QGIS</span><span>ArcGIS</span><span>PostgreSQL/PostGIS</span><span>SQLite/SpatiaLite</span><span>FME</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>IA &amp; deep learning</h3>
+        <p>Classification, détection et apprentissage automatique.</p>
+        <div class="competency-tags"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span><span>YOLO</span><span>OpenCV</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>Photogrammétrie &amp; 3D</h3>
+        <p>Reconstruction 3D et traitement de nuages de points.</p>
+        <div class="competency-tags"><span>Agisoft Metashape</span><span>COLMAP</span><span>CloudCompare</span><span>NeRF</span><span>3DGS</span><span>PDAL</span><span>Open3D</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>Webmapping &amp; développement</h3>
+        <p>Cartographie interactive et applications web.</p>
+        <div class="competency-tags"><span>GeoServer</span><span>Leaflet</span><span>Lizmap</span><span>Mapbox</span><span>QGIS Cloud</span><span>React</span><span>HTML</span><span>CSS</span><span>Tailwind CSS</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>Programmation &amp; infrastructure</h3>
+        <p>Automatisation, développement et calcul haute performance.</p>
+        <div class="competency-tags"><span>Python</span><span>R</span><span>SQL</span><span>JavaScript</span><span>Dart</span><span>VS Code</span><span>Git</span><span>GitHub</span><span>GitLab</span><span>Docker</span><span>HPC</span><span>SLURM</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>Acquisition terrain</h3>
+        <p>Collecte et relevé de données sur le terrain.</p>
+        <div class="competency-tags"><span>GPS</span><span>LiDAR TLS</span><span>QField</span><span>ODK Collect</span><span>SwMaps</span></div>
+      </div>
+      <div class="competency-card">
+        <h3>Conception graphique</h3>
+        <p>Création et mise en forme de supports visuels.</p>
+        <div class="competency-tags"><span>Inkscape</span><span>Canva</span></div>
+      </div>
+    </div>
+  </div>
+  <section class="education" aria-labelledby="education-title">
+    <div class="education-intro">
+      <h2 id="education-title">Formations & diplômes</h2>
+    </div>
+    <ul class="education-grid">
+      <li class="education-card">
+        <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+          <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+          <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+        </svg>
+        <h3>Université Rennes 2 </h3>
+        <p>Master 2 GAED - Télédétection et environnement (TELENVI)</p>
+        <p class="education-detail"> <span>2023</span></p>
+      </li>
+      <li class="education-card">
+        <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+          <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+          <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+        </svg>
+        <h3>ESIGT (École supérieure des ingénieurs géomètres topographes)</h3>
+        <p>Diplôme d’ingénieur géomètre topographe (grade master) | Option Géomatique</p>
+        <p class="education-detail"><span>2018</span></p>
+      </li>
+    </ul>
+  </section>
+  <section class="certificates" aria-labelledby="certificates-title">
+      <div class="certificates-intro">
+        <h2 id="certificates-title">Certificats</h2>
+        <p>En complément de mon parcours académique.</p>
+      </div>
+      <div class="certificates-grid">
+        <article class="certificate-card"><button class="certificate-preview" type="button" data-full="assets/certificat/lidar.webp" aria-label="Agrandir le certificat LiDAR"><img class="certificate-thumb" src="assets/certificat/lidar.webp" alt="Certificat LiDAR" loading="lazy"></button></article>
+        <article class="certificate-card"><button class="certificate-preview" type="button" data-full="assets/certificat/opencv.webp" aria-label="Agrandir le certificat OpenCV Bootcamp"><img class="certificate-thumb" src="assets/certificat/opencv.webp" alt="Certificat OpenCV Bootcamp" loading="lazy"></button></article>
+        <article class="certificate-card"><button class="certificate-preview" type="button" data-full="assets/certificat/montage_projet.webp" aria-label="Agrandir le certificat Montage Projet"><img class="certificate-thumb" src="assets/certificat/montage_projet.webp" alt="Certificat Montage Projet" loading="lazy"></button></article>
+        <article class="certificate-card"><button class="certificate-preview" type="button" data-full="assets/certificat/hyperspectrale.webp" aria-label="Agrandir le certificat Hyperspectrale"><img class="certificate-thumb" src="assets/certificat/hyperspectrale.webp" alt="Certificat Hyperspectrale" loading="lazy"></button></article>
+      
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="view" id="portfolio">
+  <div class="page-head">
+    <h2>Projets et réalisations</h2>
+    <p>Une variété de missions et de projets, tous guidés par la même ambition : rendre la donnée géospatiale accessible et réellement utile à la décision.</p>
+  </div>
+  <div class="project-filters portfolio-filters" aria-label="Filtrer les projets">
+    <button class="active" type="button" data-filter="all">Tous</button>
+    <button type="button" data-filter="sig">SIG</button>
+    <button type="button" data-filter="mapping">Cartographie</button>
+    <button type="button" data-filter="remote_sensing">Télédétection</button>
+    <button type="button" data-filter="photogrammetry">Photogrammétrie &amp; Modélisation 3D</button>
+    <button type="button" data-filter="machine_learning">Machine Learning</button>
+    <button type="button" data-filter="deep_learning">Deep Learning</button>
+    <button type="button" data-filter="vision">Computer vision</button>
+    <button type="button" data-filter="dev">Dev</button>
+  </div>
+  <div class="grid-projects">
+
+    <div class="proj-card" id="proj-cimetieres" data-category="dev mapping">
+      <div class="bg bg-project-cimetieres" role="img" aria-label="Interface cartographique de gestion des cimetières"></div>
+      <div class="overlay"><div class="tag project-meta-dark">ELYON CONSULTING · Municipalité · 2026</div><h3>Système intégré de gestion et d’inventaire des cimetières</h3><p>Un système intégré pour moderniser la gestion des cimetières : collecte mobile, gestion municipale et carte interactive réunies dans un même outil.</p>
+      <div class="project-tags"><span>PostgreSQL/PostGIS</span><span>QGIS</span><span>OpenStreetMap</span><span>React</span><span>Tailwind CSS</span><span>Dart</span><span>Flutter</span><span>Supabase</span><span>SQL</span><span>Hive</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-cimetieres">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-dendroar" data-category="dev">
+      <div class="bg bg-project-dendroar" role="img" aria-label="Application mobile DendroAR de mesure d’arbres en réalité augmentée"></div>
+      <div class="overlay"><div class="tag">ELYON CONSULTING · 2026</div><h3>Application mobile DendroAR</h3><p>Une application mobile qui transforme le smartphone en outil de terrain grâce à la réalité augmentée : distance, hauteur, DBH et houppier estimés en un instant pour accélérer les inventaires forestiers.</p>
+      <div class="project-tags"><span>Android Studio</span><span>kotlin</span><span>ARCore</span><span>Raycasting</span><span>Géolocalisation</span><span>OpenStreetMap</span><span>Dendrométrie</span><span>Foresterie</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-dendroar">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-delineation" data-category="remote_sensing machine_learning deep_learning vision">
+      <div class="bg delineation-slideshow">
+        <img src="assets/TreecrownDelienation.webp" alt="Délinéation des couronnes d’arbres, image 1">
+        <button class="cptv-control delineation-previous" type="button" aria-label="Image précédente">‹</button>
+        <button class="cptv-control delineation-next" type="button" aria-label="Image suivante">›</button>
+      </div>
+      <div class="overlay"><div class="tag">CNRS · UMR6554 LETG · MONI-TREE · 2026</div><h3>Délinéation individuelle des couronnes d’arbres par Deep Learning</h3><p>Entraînement de modèles de segmentation (U-Net) pour délimiter automatiquement les couronnes d'arbres à partir de photographies aériennes RGBi et calcul d'indices de végétation.</p>
+        <div class="project-tags"><span>TreeCrownDelineation</span><span>Python</span><span>PyTorch</span><span>GDAL</span><span>rasterio</span><span>scipy</span><span>scikit-image</span><span>Raster</span><span>Vecteur</span><span>NDVI</span><span>Végétation</span></div>
+      <a class="project-more-link" href="https://oseren.univ-rennes.fr/actualites/anr-moni-tree" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-modelisation3d" data-category="photogrammetry vision machine_learning deep_learning">
+      <div class="bg bg-project-modelisation3d" role="img" aria-label="Modèle tridimensionnel d’un arbre"></div>
+      <div class="overlay"><div class="tag">CNRS · UMR6554 LETG · NUMeNAT · 2024–2026</div><h3>Modélisation 3D de la végétation arborée</h3><p>Conception et optimisation de pipelines de reconstruction 3D par SFM-MVS, NeRF et 3D Gaussian Splatting, alimentés par des données smartphone (photos et vidéos, capteurs GPS et IMU), estimation automatique des paramètres morphologiques et évaluation de la précision des modèles par comparaison avec des relevés LiDAR.</p>
+      <div class="project-tags"><span>SfM-MVS</span><span>NeRF</span><span>3DGS</span><span>COLMAP</span><span>CloudCompare</span><span>Python</span></div>
+      <a class="project-more-link" href="https://www.vegepolys-valley.eu/les-projets/les-projets-des-membres/14776-numenat.html" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-lidar" data-category="lidar photogrammetry">
+      <div class="bg bg-project-lidar" role="img" aria-label="Relevé LiDAR"><img src="assets/lidartls.webp" alt="nuage de point d'arbre individuel"></div>
+      <div class="overlay"><div class="tag">NRS · UMR6554 LETG · NUMeNAT · 2025</div><h3>Acquisition & Traitement LiDAR</h3>
+      <p>Caractérisation 3D de la végétation à partir de LiDAR terrestre (TLS), depuis l’acquisition multi‑stations jusqu’au traitement complet des nuages de points : assemblage, géoréférencement, filtrage, classification et segmentation individuelle des arbres pour une analyse précise de leur architecture 3D.</p>
+      <div class="project-tags"><span>Z+FLaserControl </span><span>LAStools</span><span>CloudCompare</span><span>Python</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-lidar">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+<div class="proj-card" id="proj-spectro" data-category="remote_sensing ">
+      <div class="bg bg-project-spectro" role="img" aria-label="Acquisition Spectroradiomètre"><img src="assets/radiospectrometre.webp" alt="serre"></div>
+      <div class="overlay"><div class="tag">NRS · UMR6554 LETG · MONI-TREE · 2025</div><h3>Spectroradiométrie & Physiologie Végétale.</h3>
+      <p>Acquisition de signatures spectrales sur des arbustes en serre contrôlée pour appuyer la caractérisation de leur réponse physiologique face aux stress hydrique et thermique.</p>
+      <div class="project-tags"><span>Spectroradiomètre fieldspec4 </span><span> RS</span><span>Excel</span></div>
+      <a class="project-more-link" href="https://oseren.univ-rennes.fr/actualites/anr-moni-tree" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+  <div class="proj-card" id="proj-sif" data-category="sig mapping">
+      <div class="bg bg-project-sif" role="img" aria-label="Carte du système d’information foncière"></div>
+      <div class="overlay"><div class="tag">ELYON CONSULTING . ATLAS-GIS · Bénin . 2023</div><h3>Développement d'un Système d'Information Foncière (SIF)</h3>
+      <p>Conception d’une solution SIG dédiée à la gestion et à l’analyse des données socio-foncières, reposant sur une architecture combinant SQLite/SpatiaLite pour le stockage des données 
+        parcellaires, QGIS pour l’analyse et la visualisation géographiques, et WinDev pour le développement de l’application métier.</p>
+      <div class="project-tags"><span>SIG</span><span>SQLite/SpatiaLite</span><span>QGIS</span><span>WinDev</span><span>BD spatiale</span><span>WLangage</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-sif">Confidentiel<span aria-hidden="true"></span></a></div>
+    </div>
+
+
+<div class="proj-card" id="proj-ht" data-category="sig mapping">
+  <div class="bg bg-project-ht" role="img" aria-label="Carte du projet d’électrification rurale"></div>
+      <div class="overlay"><div class="tag">ERANOVE‑AEE . EGNON Consuting. Bénin. Togo . 2020-2021</div><h3>Consultant SIG - Projet d'électrification rurale</h3>
+      <p>Structuration et centralisation des données géospatiales (réseaux HT/BT, équipements, photos géotaggées, localités et ménages) ; analyses spatiales et automatisation de tâches sous QGIS ; 
+        production de supports cartographiques ; déploiement d'une plateforme collaborative de visualisation des données; formation des équipes terrain à l'utilisation du GPS</p>
+      <div class="project-tags"><span>SIG</span><span>SQLite/SpatiaLite</span><span>QGIS</span><span>ModelBuilder</span><span>GIS Cloud</span><span>Map viewer</span><span>Cartographie</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-ht">Confidentiel<span aria-hidden="true"></span></a></div>
+    </div>
+
+
+    <div class="proj-card" id="proj-inondation" data-category="sig mapping photogrammetry remote_sensing">
+      <div class="bg bg-project-inondation" role="img" aria-label="Carte des risques d’inondation"></div>
+      <div class="overlay"><div class="tag">PNUD · ANPC · ATLAS-GIS · Bénin · 2021</div><h3>Cartographie des risques d’inondation – Bassins du Niger, du Mono et de l’Ouémé</h3>
+      <p>Mission conduite dans 6 communes du Bénin en tant qu'Assistante de l'expert cartographie, SIG et télédétection : traitements géospatiaux, production de supports cartographiques, 
+        élaboration de la base de données spatiales, formation aux outils SIG et appui à la mise en place de la plateforme d'alerte aux inondations.</p>
+      <div class="project-tags"><span>Webmapping</span><span>Cartographie</span><span>SIG</span><span>Photogrammétrie</span><span>Télédétection</span><span>Imagerie Drone</span>
+        <span>Orthophoto</span><span>MNT</span><span>SGBD</span><span>QGIS</span><span>Lizmap</span><span>Agisoft Metashape</span><span>QField</span></div>
+      <a class="project-more-link" href="https://www.undp.org/fr/benin/actualites/la-cartographie-pour-une-meilleure-gestion-des-risques-dinondation-au-benin" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+
+    <div class="proj-card" id="proj-cptv" data-category="mapping sig">
+      <div class="bg cptv-slideshow">
+        <img src="assets/cptv/1.webp" alt="Cartographie participative des terroirs villageois, image 1 sur 7">
+        <button class="cptv-control cptv-previous" type="button" aria-label="Image précédente">‹</button>
+        <button class="cptv-control cptv-next" type="button" aria-label="Image suivante">›</button>
+      </div>
+      <div class="overlay"><div class="tag">GIZ · ProPFR · ProAgri-3 · ATLAS-GIS Bénin · 2018</div><h3>Cartographie participative des terroirs villageois</h3>
+      <p>243 villages cartographiés dans le département du Borgou, au nord du Bénin, grâce à une démarche participative alliant médiation foncière, relevés terrain, traitement SIG et 
+        validation locale des données, en appui à l'établissement des Plans Fonciers Ruraux.</p>
+      <div class="project-tags"><span>GPS</span><span>QGIS</span><span>Cartographie</span><span>Occupation du sol</span><span>Validation locale</span></div>
+      <a class="project-more-link" href="https://landportal.org/library/resources/d%C3%A9pliant-cartographie-participative-des-terroirs-des-villages-au-b%C3%A9nin" target="_blank" rel="noopener noreferrer">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-training" data-category="sig mapping training">
+      <div class="bg formation-slideshow">
+        <img src="assets/formation_img/formation_1.webp" alt="Formatrice SIG et Géomatique, image 1">
+        <button class="cptv-control formation-previous" type="button" aria-label="Image précédente">‹</button>
+        <button class="cptv-control formation-next" type="button" aria-label="Image suivante">›</button>
+      </div>
+      <div class="overlay"><div class="tag">Animation de formations professionnelles</div><h3>Formatrice SIG et Géomatique</h3>
+      <p>Conception et animation de modules de formation sur mesure en géomatique pour professionnels, étudiants et techniciens.
+    Expertise : <strong>AutoCAD, Covadis, QGIS, ArcGIS, SGBD (PostgreSQL/PostGIS, SQLite/SpatiaLite), SNAP, ENVI, Agisoft Metashape, GPS et SIG mobile</strong>.
+    Pédagogie axée sur les cas pratiques et la montée en compétences. +100 sessions animées · +500 personnes formées.
+  </p>
+      <div class="project-tags"><span>DAO</span><span>SIG</span><span>Photogramétrie</span><span>GPS/GNSS</span><span>SGBDr</span><span>Formation</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-training">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+    <div class="proj-card" id="proj-field" data-category="mapping ">
+      <div class="bg terrain-slideshow">
+        <img src="assets/terrain_img/20180318_125658.webp" alt="Acquisition terrain, image 1">
+        <button class="cptv-control terrain-previous" type="button" aria-label="Image précédente">‹</button>
+        <button class="cptv-control terrain-next" type="button" aria-label="Image suivante">›</button>
+      </div>
+      <div class="overlay"><div class="tag">Campagne in situ et en environnement contrôlé</div><h3>Collecte de données multimodales</h3>
+      <p>Acquisition et caractérisation de données in situ à travers des relevés géolocalisés, des scans LiDAR, des mesures spectrales et des indicateurs physiologiques de la végétation. Une expertise combinant géomatique, instrumentation de terrain et caractérisation des territoires.</p>
+      <div class="project-tags"><span>GPS</span><span>LIDAR</span><span>Smartphone</span><span>SIG mobile</span><span>Dualex</span><span>LAI 2000</span><span>Spectroradiomètre</span><span>SIG mobile</span></div>
+      <a class="project-more-link" data-target="portfolio" data-project="proj-training">En savoir plus <span aria-hidden="true">→</span></a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CARTOTHÈQUE -->
+<section class="view travel-view" id="voyages" aria-labelledby="voyages-title">
+  <header class="travel-header">
+    <div class="travel-heading"><p class="travel-kicker">Au service de la décision</p><h2 id="voyages-title">Cartothèque</h2><div class="travel-intro"><p></p></div></div>
+  </header>
+  <section class="travel-region travel-region-france" aria-labelledby="travel-france-title">
+    <div class="travel-region-heading"><h3 id="travel-france-title">France</h3></div>
+    <div class="travel-grid" aria-label="Cartes de France">
+      <button class="travel-photo travel-photo-landscape" type="button" data-full="assets/cartotheque/bretagne_1.webp" data-caption="Prix moyen au m² en Bretagne">
+        <img src="assets/cartotheque/bretagne_1.webp" alt="Carte du prix moyen au m² en Bretagne" loading="lazy" draggable="false">
+        <span><strong>Bretagne</strong><small>2021 - Prix moyen au m²</small></span>
+      </button>
+    </div>
+  </section>
+  <section class="travel-region" aria-labelledby="travel-benin-title">
+    <div class="travel-region-heading"><h3 id="travel-benin-title">Bénin</h3></div>
+    <div class="travel-grid" aria-label="Cartes du Bénin">
+      <button class="travel-photo" type="button" data-full="assets/cartotheque/administratif_benin.webp" data-caption="Carte administrative du Bénin">
+        <img src="assets/cartotheque/administratif_benin.webp" alt="Carte administrative du Bénin" loading="lazy" draggable="false">
+        <span><strong>Le Bénin en un regard</strong><small>2021 - Carte administrative</small></span>
+      </button>
+      <button class="travel-photo" type="button" data-full="assets/cartotheque/carte_evolution_benin_2002_2013.webp" data-caption="Évolution de la population du Bénin, 2002–2013">
+        <img src="assets/cartotheque/carte_evolution_benin_2002_2013.webp" alt="Carte de l’évolution de la population du Bénin entre 2002 et 2013" loading="lazy" draggable="false">
+        <span><strong>Évolution de la population</strong><small>Bénin · 2002–2013</small></span>
+      </button>
+      <button class="travel-photo" type="button" data-full="assets/cartotheque/Bénin_carte_enfant.webp" data-caption="Carte du Bénin pour enfants">
+        <img src="assets/cartotheque/Bénin_carte_enfant.webp" alt="Carte du Bénin destinée aux enfants" loading="lazy" draggable="false">
+        <span><strong>Le Bénin illustré</strong><small>2020 - Carte pour enfants</small></span>
+      </button>
+      <button class="travel-photo" type="button" data-full="assets/cartotheque/Benin_carte.webp" data-caption="Carte du Bénin">
+        <img src="assets/cartotheque/Benin_carte.webp" alt="Carte du Bénin" loading="lazy" draggable="false">
+        <span><strong>Carte du Bénin</strong><small>2020 - Découvrir le territoire</small></span>
+      </button>
+    </div>
+  </section>
+  <dialog class="travel-lightbox" aria-label="Visionneuse d’images">
+    <button class="travel-lightbox-close" type="button" aria-label="Fermer">×</button>
+    <div class="travel-lightbox-toolbar" aria-label="Commandes de zoom">
+      <button class="travel-lightbox-zoom-out" type="button" aria-label="Zoom arrière" title="Zoom arrière">−</button>
+      <output class="travel-lightbox-zoom-level" aria-live="polite">100%</output>
+      <button class="travel-lightbox-zoom-in" type="button" aria-label="Zoom avant" title="Zoom avant">+</button>
+      <button class="travel-lightbox-zoom-reset" type="button">Ajuster</button>
+    </div>
+    <div class="travel-lightbox-viewport" tabindex="0" aria-label="Image agrandie, défilez pour la parcourir">
+      <img src="" alt="" draggable="false">
+    </div>
+    <p></p>
+    <button class="travel-lightbox-nav travel-lightbox-previous" type="button" aria-label="Image précédente">‹</button>
+    <button class="travel-lightbox-nav travel-lightbox-next" type="button" aria-label="Image suivante">›</button>
+  </dialog>
+</section>
+
+<!-- RESOURCES -->
+<section class="view" id="resources">
+  <div class="page-head">
+    <div class="eyebrow">Fiches, tutoriels et supports.</div>
+    <h2>Cours &amp; Ressources</h2>
+    <p>En cours...</p>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="view" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <h2>Discutons de votre projet </h2>
+      <p>Un besoin technique, une mission, une formation ou un accompagnement ? Échangeons sur vos besoins et les solutions adaptées.</p>
+    </div>
+    <form class="contact-right" id="contactForm">
+      <div class="field"><label for="contactName">Nom</label><input id="contactName" name="name" type="text" placeholder="Votre nom" autocomplete="name" required></div>
+      <div class="field"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required></div>
+      <div class="field"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message" rows="5" placeholder="Décrivez votre projet…" required></textarea></div>
+      <button class="send-btn" type="submit">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span> Murielle H. </span>
+  <span>© 2026. Tous droits réservés </span>
+</footer>
+
+<script src="index.js?v=2"></script>
+
+</body>
+</html>
